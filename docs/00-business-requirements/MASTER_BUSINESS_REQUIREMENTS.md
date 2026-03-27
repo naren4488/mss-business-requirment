@@ -147,42 +147,211 @@ If the project is in cash mode:
 1. Login
 2. Complete site installation
 3. Start subsidy process
-4. Apply for subsidy type(s) as per eligibility:
+4. Apply for subsidy as per eligibility:
    - Central subsidy
    - State subsidy
    - Both Central and State subsidy (if allowed by policy)
 
-### Step 3: Loan-Based Flow
-
-If the project is in loan mode:
+### C) Subsidy Flow - Loan Case
 
 1. Login
 2. Apply for loan
 3. Process vendorship
 4. Complete site installation
 5. Start subsidy process
-6. Apply for subsidy as per eligibility (Central, State, or both Central and State where allowed)
-7. Prepare and submit file with bank
+6. Apply for subsidy as per eligibility:
+   - Central subsidy
+   - State subsidy
+   - Both Central and State subsidy (if allowed by policy)
 
-### Step 4: Bank File Purpose and Document Sequence
-
-For bank file submission, follow this order:
+### D) Bank File Submission Order (Loan Case)
 
 1. PM Surya app form
 2. Subsidy details/form
 3. Feasibility report
 4. Required customer documents
+5. Loan File Book (client signature and first installment details for loan cases)
 
-### Required Customer Documents for Bank File
-
-These documents are applicable in both payment modes:
-- Cash case
-- Loan case
+### E) Required Documents (Applicable in Both Cash and Loan Cases)
 
 - PAN Card
 - Aadhaar Card
 - Passbook (bank passbook copy)
 - Electricity Bill (latest 6 months copy)
+
+## 5.3) Structure Installation and Material List Form Process
+
+This section defines the process for structure work, panel installation, and material tracking.
+
+### Structure and Installation Flow
+
+1. Login
+2. Create/select site project
+3. Start structure work at site
+4. Install panels and required materials
+5. Update used material quantities in material list form
+6. Confirm site installation completion
+
+### Material List Form (Per Site)
+
+The material list form should capture:
+
+- Site/project reference
+- Material category (for example: Structure, Electrical, Panel Accessories)
+- Material name
+- Unit (pcs, foot, meter, etc.)
+- Opening quantity
+- Issued to site quantity
+- Returned from site quantity
+- Scrap quantity
+- Installed/consumed quantity
+- Available balance
+- Buy price and sale price (if needed for business tracking)
+- Last update date and updated by
+
+### Existing Items Already Implemented (As per shared screen)
+
+The following inventory/material management capabilities are already available and should be considered existing:
+
+- Inventory -> Materials page
+- Material search
+- Category filter
+- Group view toggle
+- Issue to Site action
+- Return from Site action
+- Add to Scrap action
+- View Scrap action
+- Add Material action
+- Stock summary cards (Total Items, Total Stock, Stock Value, Low Stock)
+
+### Additional Material Screen Points (New from latest shared screen)
+
+- Total units indicator should be visible at list level (for example: total units count on the right side).
+- Group header should show group name with item count (for example: Structure + count).
+- Material card/list entry should show specification/size text (for example: M12 thread, 75x75mm, 60x40mm).
+- Material quantity display should support mixed units per item (pcs, foot, etc.).
+
+### Change Requirements to Add/Improve
+
+- Add direct linkage between site installation process and material list form entries.
+- Ensure structure and panel installation cannot be marked complete without material usage update.
+- Maintain per-site material consumption history for audit and subsidy/bank file support.
+- Keep material unit consistency (pcs, foot, meter) across issue, return, and installation records.
+
+## 5.4) Module-Wise Headings (Based on Current App)
+
+Use the following heading structure for all business requirements and feature documents.
+
+
+
+## 5.5) Material Verification, Transportation, Return Policy, and Tools Condition
+
+This section defines operational terms for material movement and tool quality checks.
+
+### A) Material List Verification
+
+1. Material list must be verified before issue to site.
+2. Verification must include item name, quantity, unit, and condition.
+3. Site supervisor and store/inventory owner must confirm verification.
+4. Any mismatch must be recorded before dispatch.
+
+### B) Transportation Terms (Materials)
+
+1. Transport responsibility must be defined for each dispatch (company/vendor/site).
+2. Dispatch record must include date, vehicle details, and reference number.
+3. Materials must be checked at loading and unloading points.
+4. Damaged or missing materials during transport must be logged immediately.
+5. Transportation charges and liability terms must be documented in the record.
+
+### C) Material Return Policy and Terms
+
+1. Unused material must be returned from site with return entry.
+2. Return entry must capture material quantity, condition, and reason for return.
+3. Return categories:
+   - Good reusable material
+   - Damaged material
+   - Scrap material
+4. Good reusable material goes back to available stock.
+5. Damaged and scrap material must follow approval and disposal process.
+6. Financial adjustment rules (if applicable) must be recorded for damaged/lost material.
+
+### D)  Common Compliance Terms
+
+1. No issue/return/transport entry should be completed without mandatory fields.
+2. All entries should maintain date-time and user audit trail.
+3. Site-wise history must be available for material and tools for audit and dispute handling.
+
+## 5.6) Tools Module Requirements (As per current screen)
+
+This section captures tools tracking requirements based on the current Tools page.
+
+### A) Tools Summary Cards
+
+The module should display:
+
+- Total Tools
+- Available
+- In Use
+- Under Repair
+
+### B) Tools Operations
+
+The module should support:
+
+- Issue Tool to Site
+- Return to Warehouse
+- Add Tool
+
+### C) Search and Filters
+
+The module should support:
+
+- Search tools
+- Status filter (All/Available/In Use/Under Repair)
+- Category filter (for example: Power Tool, Hand Tool, Others)
+
+### D) Tools List Columns
+
+Each tool record should include:
+
+- Tool Name
+- Category
+- Assigned To
+- Site
+- Status
+- Condition
+- Last Updated
+- Value
+- Actions
+
+### E) Tool Status and Condition Rules
+
+1. Tool status should be one of: Available, In Use, Under Repair.
+2. Tool condition should support at least: Good, Minor Damage, Major Damage, Not Working.
+3. If condition is "Not Working", status should move to "Under Repair" and tool should not be issued.
+4. On issue/return, assigned user and site must be updated.
+5. Each update should keep date-time and user audit trail.
+
+### F) Existing Capabilities Already Available (As per shared screen)
+
+- Tools page with summary cards
+- Issue Tool to Site action
+- Return to Warehouse action
+- Add Tool action
+- Search and filter controls
+- Tool list with status and condition visibility
+
+### G) Tools Verification and Condition Standards (Additional)
+
+1. Every tool issue and return must include condition status.
+2. Recommended condition types:
+   - Good condition
+   - Minor damage
+   - Major damage
+   - Not working
+3. Tool handover must include issued by, received by, date, and signature/confirmation.
+4. Damaged tools must be tagged and moved to maintenance/repair workflow.
+5. Tools marked "not working" cannot be re-issued until verified after repair.
 
 ## 6) Key Business Rules
 
