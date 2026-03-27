@@ -1,6 +1,6 @@
 # Loan File Book Template
 
-Use this file book for loan cases where client signs and first installment is tracked.
+Use this file book for loan cases where client signs and loan installments (first and second) are tracked.
 
 ## 1) Customer and Project Details
 
@@ -41,7 +41,19 @@ Use this file book for loan cases where client signs and first installment is tr
 - Received by:
 - Receipt number:
 
-## 5) Document Checklist (Loan File)
+## 5) Second Installment Details (Loan)
+
+- Second installment required: Yes / No
+- Second installment amount:
+- Due date (if defined by bank/agreement):
+- Payment mode: Cash / UPI / Bank Transfer / Cheque
+- Transaction reference number:
+- Payment date:
+- Received by:
+- Receipt number:
+- Remarks (if partial payment or adjustment):
+
+## 6) Document Checklist (Loan File)
 
 - [ ] PAN Card
 - [ ] Aadhaar Card
@@ -51,7 +63,7 @@ Use this file book for loan cases where client signs and first installment is tr
 - [ ] Subsidy Form/Details
 - [ ] Feasibility Report
 
-## 6) Internal Verification
+## 7) Internal Verification
 
 - Verification done by:
 - Verification date:

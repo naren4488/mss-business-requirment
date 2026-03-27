@@ -170,7 +170,7 @@ If the project is in cash mode:
 2. Subsidy details/form
 3. Feasibility report
 4. Required customer documents
-5. Loan File Book (client signature and first installment details for loan cases)
+5. Loan File Book (client signature, first installment, and second installment details for loan cases)
 
 ### E) Required Documents (Applicable in Both Cash and Loan Cases)
 
@@ -191,6 +191,39 @@ This section defines the process for structure work, panel installation, and mat
 4. Install panels and required materials
 5. Update used material quantities in material list form
 6. Confirm site installation completion
+
+### Structure Set, Electrical Setup, and Verification
+
+1. Complete structure setup at site.
+2. Install solar panels on approved structure.
+3. Complete wiring connection for panel-to-inverter and inverter-to-meter path.
+4. Install inverter, **meter** (meter installation per utility/DISCOM requirements), and related electrical accessories as per approved plan.
+   - **Net metering:** complete net metering scope inside the meter work (correct meter type, import/export or bidirectional setup, and compliance with applicable utility and scheme rules).
+5. Perform electrical check and verification using multimeter (including meter terminals and net metering-related checks where applicable).
+6. Record verification outcome (pass/fail) with remarks.
+7. Upload photos of complete plant installation.
+8. Upload clear photo(s) of installed inverter.
+9. Upload clear photo(s) of installed **meter(s)**, including net metering display (import/export or relevant readings) where applicable.
+
+### Photo Verification
+
+Uploaded photos must pass **photo verification** before the site step is treated as complete for reporting or subsidy/loan file use.
+
+1. A designated verifier (for example: site supervisor, operations, or admin as per policy) reviews each required photo set: full plant, inverter, and meter(s) including net metering display where applicable.
+2. Verification checks should include: photo clarity, correct site/project reference, visible key components, and alignment with the approved installation scope.
+3. Each verification must have a status: **Approved**, **Rejected**, or **Resubmit requested**, with short remarks when not approved.
+4. Rejected or incomplete photo sets must be re-uploaded and verified again.
+5. Verification date, verifier name, and status must be stored for audit (same evidence may be referenced in DCR or work completion reports).
+
+### DCR Report, Work Completion Report, and Vendor
+
+After structure, electrical verification, photo upload, and **photo verification**:
+
+1. Prepare and submit **DCR report** (as per scheme/bank or internal format).
+2. Prepare and submit **work completion report** for the site.
+3. Record **vendor** details and vendor confirmation linked to the project (where applicable).
+4. Attach or reference supporting evidence (photos, multimeter readings, dates) with these reports.
+5. Mark reports as submitted/approved before moving to subsidy or loan file steps.
 
 ### Material List Form (Per Site)
 
@@ -352,6 +385,104 @@ Each tool record should include:
 3. Tool handover must include issued by, received by, date, and signature/confirmation.
 4. Damaged tools must be tagged and moved to maintenance/repair workflow.
 5. Tools marked "not working" cannot be re-issued until verified after repair.
+
+## 5.7) Bill to Book and Invoice
+
+Commercial billing must follow a clear sequence from order to accounting record and tax document.
+
+### Bill to Book
+
+1. Every confirmed sale or service must be **entered in the bill book** (sales/order register) with a unique reference.
+2. Bill-to-book entry must link to: customer, project/site, quotation or order reference, and payment mode (cash/loan).
+3. Record date, line items or summary amount, taxes (if applicable), and responsible user.
+4. Bill book entries must support audit: corrections only with approval and reason.
+
+### Invoice
+
+1. Issue a formal **invoice** for the customer for taxable or billable amounts as per company policy.
+2. Invoice must include: invoice number, invoice date, customer billing details, item/description, quantity, rate, taxes, and total payable.
+3. Invoice numbering must be continuous and unique (no gaps without documented reason).
+4. Link each invoice to the related quotation, bill-to-book entry, and project where applicable.
+5. Payment received must be reconciled against the invoice (full or partial) with date and mode.
+6. Credit notes or revised invoices (if any) must reference the original invoice.
+
+### Loan Installments (First and Second)
+
+For **loan** projects, track customer payments in order:
+
+1. **First installment** — amount, due date (if any), payment date, mode, reference, receipt, and confirmation in the Loan File Book.
+2. **Second installment** — same fields as applicable under bank or company agreement; record when paid and reconcile against the loan schedule.
+3. No installment entry should be marked complete without transaction reference or receipt where required by finance policy.
+
+## 5.8) Presets (Quotations, Invoice, and Inventory Matching)
+
+This section reflects the **Presets** area used to configure standard system bundles (material lists) for **quotations** and **invoice and inventory matching** (as per current screen).
+
+### Summary and Categories
+
+- Presets are grouped by segment, for example: **Residential**, **Commercial**, **Industrial**.
+- Summary should show counts such as: total presets, residential count, commercial count, industrial count.
+
+### Filters
+
+- **All** presets
+- **For Quotations**
+- **For Invoice & Inventory Matching**
+
+### Preset Card Content (Per Preset)
+
+Each preset should show at least:
+
+- System size (kW)
+- Total line items count (for example: 17 items for a full BOM)
+- Panel summary (brand, wattage, quantity — for example: Waaree 540W, quantity as per kW)
+- Inverter summary (brand and kW rating — for example: Growatt matching system size)
+- Structure type (for example: Elevated GI)
+- Estimated cost (for example: ₹1,85,000 for 3 kW; ₹2,80,000 for 5 kW — illustrative from current presets)
+- Purpose tag where applicable: **For Invoice & Inventory Matching** (and/or quotation use)
+
+### Example Residential Presets (From Current Screen)
+
+| System | Panels | Inverter | Structure | Notes |
+|--------|--------|----------|-----------|--------|
+| 3 kW | 6 × Waaree 540W | Growatt 3 kW | Elevated GI | 17 items; tagged for invoice and inventory matching |
+| 5 kW | 10 × Waaree 540W | Growatt 5 kW | Elevated GI | 17 items; tagged for invoice and inventory matching |
+
+Additional items (for example wiring, protection, meter-related materials) may be included inside the full item list even if not shown on the summary card.
+
+### Actions
+
+- Add Preset
+- View preset
+- Edit preset
+- Delete preset
+
+## 5.9) Files, Data, and Gallery (Online and Offline)
+
+The system must support storing and viewing project **files**, structured **data**, and a **gallery** of images, with both **online** and **offline** working patterns where field teams may have poor connectivity.
+
+### Files
+
+1. Users can attach and store files against a customer, site, or project (for example: agreements, bank forms, subsidy papers, DCR, work completion).
+2. Each file should have: name, type, upload date, uploaded by, and link to the correct project or milestone.
+3. File access should follow role permissions (who can view, upload, or delete).
+4. **Offline:** users should be able to queue new file uploads when connection returns, or save locally per app policy, without losing the link to the project.
+5. **Online:** uploads should confirm success and show the file in the project file list immediately when connectivity is available.
+
+### Data
+
+1. Operational data (forms, checklists, material usage, installment records) should save reliably and stay linked to the right project.
+2. **Online:** data should sync to the server in near real time when possible.
+3. **Offline:** users should be able to enter or update data on site; the system should sync when the device is back online, with clear status (saved locally / pending sync / synced).
+4. Conflicts or duplicate submissions should be avoided or flagged for review.
+
+### Gallery (Photos and Visual Evidence)
+
+1. **Gallery** should group site photos (plant, inverter, meter, structure, and other evidence) by project and category.
+2. Photos should support the **photo verification** workflow (approved / rejected / resubmit).
+3. **Online:** gallery view, full-size view, and download or share as per policy.
+4. **Offline:** users should be able to capture photos on site; images should attach to the project and upload when online, with visible pending state until upload completes.
+5. Thumbnail or preview may be available offline for recently opened projects if supported by the app, without exposing sensitive data to unauthorized users.
 
 ## 6) Key Business Rules
 
