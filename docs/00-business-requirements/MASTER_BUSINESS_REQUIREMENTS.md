@@ -484,6 +484,89 @@ The system must support storing and viewing project **files**, structured **data
 4. **Offline:** users should be able to capture photos on site; images should attach to the project and upload when online, with visible pending state until upload completes.
 5. Thumbnail or preview may be available offline for recently opened projects if supported by the app, without exposing sensitive data to unauthorized users.
 
+## 5.10) Team, Employees, and HR (Payroll and Attendance)
+
+The **Team** area includes employee management and HR workflows. For **employees**, the business needs two linked areas: **Payroll** (money and month-end totals) and **Attendance** (day-to-day presence, which drives Present / Absent / Holiday in payroll).
+
+The following reflects the current **HR** screen (**Payroll** tab) and the dedicated **Attendance** screen (as per shared UI).
+
+### Navigation and Tabs
+
+- Main area title: **HR**
+- Primary action: **Add Employee**
+- Tabs:
+  - **Payroll** (salary and payment tracking)
+  - **Site Deployment Board** (site assignment view — separate from payroll detail)
+
+### Attendance Screen (As per Current UI)
+
+**Header**
+
+- Page title: **Attendance**
+- **Selected Date** with a date picker (for example: 27-03-2026) and helper text: **(Select past dates to edit)** — user can pick a past date to correct marks.
+- Action: **+ Mark Holiday** — record a holiday for the selected date (or scope defined by policy).
+
+**Per-Employee Card**
+
+Each employee appears as a card with:
+
+- Role label (for example: SITE SUPERVISOR, SENIOR INSTALLER, ELECTRICIAN) and an **Active** status badge.
+- Profile: avatar, **name**, and **phone number**.
+- **Monthly summary** for the month in view (for example: **MARCH 2026 SUMMARY**):
+  - **Active Days:** `marked days / days in month` (for example: 0 / 27).
+  - **Per day rate** (₹) used to calculate earnings from attendance.
+  - Short **attendance breakdown** (for example: P = Present, H = Holiday, PL = Paid Leave).
+- **Money snapshot on the card:**
+  - **Current earnings** (from attendance × per day rate for the period).
+  - **Last month pending** (carry-over), when applicable.
+  - **Total payable** (current + pending where the product shows it).
+- **Paid leave** line for the month (for example: **Paid Leave (Mar)**) with availability (for example: **1/1 Available**).
+- **Daily actions** for the **selected date:** **Present** and **Absent**.
+
+**Attendance and Payroll Link**
+
+1. Marks from this screen must roll up to monthly **Present**, **Absent**, and **Holiday** on **Salary & Payroll**.
+2. **Per day rate**, **active days**, and **total payable** on cards must stay consistent with payroll **Pending** / **Advance** after month-end rules.
+3. **Past-date edits** follow the “select past dates to edit” rule, with audit/approval if your policy requires it.
+4. **Offline:** attendance may be captured without network and synced later with correct date, time, and employee.
+
+### Salary and Payroll (By Month)
+
+- Section title pattern: **Salary & Payroll** with a selected month and year (for example: December 2024).
+- Payroll should be viewable and manageable per month for all employees.
+
+### Payroll Table Columns
+
+Each employee row should support at least:
+
+| Column | Purpose |
+|--------|---------|
+| Employee | Name and role (for example: Site Supervisor, Senior Installer, Electrician) |
+| Salary | Base monthly salary amount |
+| Present | Count of present days in the month |
+| Absent | Count of absent days in the month |
+| Holiday | Count of holidays in the month |
+| Pending | Salary amount still pending to be paid |
+| Advance | Amount already paid in advance or adjusted |
+| Actions | Operational actions (see below) |
+
+### Row Actions (Per Employee)
+
+- **Pay** — record or process salary payment toward pending balance.
+- **Expense** — add or link an expense entry for that employee.
+- **Task** — open or assign tasks related to that employee (for example site or follow-up work).
+
+### Example Roles Shown on Screen (Illustrative)
+
+Roles may include: Site Supervisor, Senior Installer, Electrician, Installer, Helper, Driver — with salaries and attendance tracked in the same payroll table.
+
+### Business Rules (Initial)
+
+1. Employee master data (name, role, salary) should be maintained before monthly payroll is run.
+2. Present, absent, and holiday counts should drive or reconcile with **Pending** and **Advance** for the month.
+3. Payment actions should leave an audit trail (who paid, when, and amount).
+4. Access to payroll and employee financial data should be restricted to authorized roles.
+
 ## 6) Key Business Rules
 
 - Pricing rules: [To be filled]
