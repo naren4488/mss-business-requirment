@@ -567,6 +567,129 @@ Roles may include: Site Supervisor, Senior Installer, Electrician, Installer, He
 3. Payment actions should leave an audit trail (who paid, when, and amount).
 4. Access to payroll and employee financial data should be restricted to authorized roles.
 
+## 5.11) Finance and Accounts
+
+**Scope:** Company-level money: income, expense, payables to suppliers, lender loans and repayments, and partner profit and capital. Customer **quotations**, **bill to book**, **invoices**, and **customer loan installments** (Loan File Book) stay aligned with this module where amounts are recorded or exported.
+
+**Surface name:** Finance and Accounts — *Manage transactions, invoices, and financial reports.*
+
+### Global Actions (All Finance Areas)
+
+| Action | Business meaning |
+|--------|------------------|
+| Add Expense | Record money going out (operational or project cost). |
+| Add Income | Record money coming in (receipts, fees, recoveries). |
+| Export Finances | Export data for accounting, audit, or backup; access controlled. |
+
+### Main Sections (Navigation Headings)
+
+| Section | What the business uses it for |
+|---------|------------------------------|
+| Dashboard | One place to see health of revenue, expenses, profit, and latest movements. |
+| Transactions | Detailed ledger-style list of income and expense entries; supports drill-down from approval and export needs. |
+| Vendors | Who we buy from, how much we still owe, and how vendors are grouped by category (panels, inverter, structure, etc.). |
+| Loans and Repayments | Loans **to the company** from banks or NBFCs (or formal one-off dues): principal, EMI, outstanding, and payment actions. |
+| Partners | Investors, co-owners, contractors: invested capital, profit shared, and what is still pending to pay. |
+
+---
+
+### Dashboard
+
+**Goal:** Answer four questions at a glance, then show trend and freshness of data.
+
+1. **Total Revenue** — income recognized in the chosen reporting window (period definition is a product rule; must be consistent with Transactions).
+2. **Total Expenses** — expenditure in the same window.
+3. **Outstanding** — receivables or payables still open (definition must match Transactions and Vendors/Loans where relevant).
+4. **Net Profit** — revenue minus expenses per the same rules (before tax if that is a later enhancement, state clearly in product).
+
+**Trend:** **Revenue vs Expenses** over time (for example by month) so leadership can compare months.
+
+**Activity:** **Recent Transactions** — latest income and expense lines with enough fields to identify amount, type, and link to project or category without opening another system.
+
+---
+
+### Vendors
+
+**Goal:** One vendor master, clear **payables**, and categories that match how you buy for solar (material type).
+
+**Rollups on the list**
+
+- Total vendors | Vendors **with outstanding** | **Total outstanding** (sum due) | **Categories** count
+
+**Finding records**
+
+- Search by name or keyword.
+- Filter by category (for example All Categories or one category).
+
+**Minimum data per vendor**
+
+- Name, phone, email, city/state.
+- **Categories** supplied (examples: solar panels, inverter, battery, cable, tools, structure).
+- **Amount due** (outstanding to that vendor).
+- **View** full record | **Edit** master data | **Add Vendor** for new suppliers.
+
+**Business expectation:** Vendor outstanding should reconcile with purchase and payment entries recorded through Transactions (or linked flows) so Finance totals stay trustworthy.
+
+---
+
+### Loans and Repayments
+
+**Goal:** Track **organization loans** (not the same as customer EMIs on the Loan File Book unless you explicitly link them in a future rule).
+
+**Rollups**
+
+- Active loan count | **Total principal** | **Total outstanding** | **Combined monthly EMI** (EMI-type loans only, per product rule)
+
+**Finding records**
+
+- Search | Filter **Status** | Filter **Type** (for example EMI vs One-Time)
+
+**Register columns**
+
+| Column | Meaning |
+|--------|---------|
+| Source | Lender or bank name (or counterparty for one-time). |
+| Type | EMI loan vs one-time / bullet repayment. |
+| Principal | Original disbursed amount. |
+| Rate | Interest rate where applicable. |
+| Payment Info | INR per month for EMI, or **due date** for one-time. |
+| Outstanding | Remaining principal or balance to close. |
+| Status | For example Active, Closed. |
+| Actions | **Pay EMI** or **Record Payment** as appropriate. |
+
+**Add Loan** creates a new facility row; every repayment must reduce outstanding and leave an audit trail.
+
+---
+
+### Partners
+
+**Goal:** Track **capital** and **profit-share obligations** to contractors, investors, and co-owners.
+
+**Rollups**
+
+- Partner count | **Total invested** | **Profit shared** (paid out) | **Pending profit** (still owed)
+
+**Finding records**
+
+- Search | Filter **All Types** (or one type: Contractor, Investor, Co-Owner, etc.)
+
+**Minimum data per partner**
+
+- Type, **share percent**, name, contact or reference id.
+- **Invested**, **profit paid** to date, **pending** amount.
+- **Pay** — post a payout against pending | **Details** — history and full profile.
+
+**Add Partner** for new relationships; payout actions require authorized role.
+
+---
+
+### Cross-Cutting Finance Rules
+
+1. **Single source of truth:** Dashboard KPIs must be derivable from Transactions (and linked entities), not manual-only overrides without audit.
+2. **Audit:** Who created or changed an amount, when, and which project or vendor or loan it touched.
+3. **Access:** Finance tabs, export, and payment actions are role-restricted.
+4. **Naming:** Customer-facing loan installments remain documented in **Loan File Book** and subsidy/bank sections; **Loans and Repayments** here = **company** borrowings unless you later define an explicit link.
+
 ## 6) Key Business Rules
 
 - Pricing rules: [To be filled]
