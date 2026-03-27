@@ -72,6 +72,34 @@ It should not include software engineering implementation details.
 
 Each role's responsibilities will be added as we capture detailed requirements.
 
+## 11) User Types and Role Structure
+
+The business will have two main user types:
+
+- Admin
+- Employee
+
+Each user type will have role-based classification.
+
+### Admin Type - Roles
+
+- Admin
+- CEO
+- Additional admin roles can be added as needed
+
+### Employee Type - Roles
+
+- Site Supervisor
+- Welder
+- Civil Worker
+- Additional employee roles can be added as needed
+
+### Core Requirement
+
+- Every user must belong to exactly one user type.
+- Every user must be assigned a role under that user type.
+- User creation and management should always be done based on user type and user role.
+
 ## 8) Reporting and KPIs
 
 - Lead conversion rate

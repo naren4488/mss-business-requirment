@@ -6,7 +6,8 @@ Use this index to track feature-level documentation.
 
 | Feature ID | Feature Name | Business Doc | UI Doc | Backend Doc | API Doc | Data Doc | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| F-001 | [To be filled] | Pending | Pending | Pending | Pending | Pending | Draft |
+| F-001 | Lead Management | Available | Pending | Pending | Pending | Pending | Draft |
+| F-002 | User Type and Role Management | Available | Available | Available | Available | Available | Draft |
 
 ## Feature Document Location
 
