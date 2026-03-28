@@ -690,6 +690,90 @@ Roles may include: Site Supervisor, Senior Installer, Electrician, Installer, He
 3. **Access:** Finance tabs, export, and payment actions are role-restricted.
 4. **Naming:** Customer-facing loan installments remain documented in **Loan File Book** and subsidy/bank sections; **Loans and Repayments** here = **company** borrowings unless you later define an explicit link.
 
+## 5.12) Analytics and Reports
+
+**Purpose:** *Business insights and performance metrics* for the solar business — one screen with filters, KPIs, segment mix, top performers, and export.
+
+**Period filter:** This month | This quarter | This year | Yearly (full selected year). All metrics follow the selected period unless a card states its own comparison (e.g. vs last year).
+
+**Actions:** **Export report** for the current view (role-restricted).
+
+**KPIs (₹ where money):** Total revenue (align with Finance) | Active projects (align with Projects) | Total employees (align with HR / Team) | Stock value (align with Inventory valuation). Optional short trend text per card.
+
+**Project distribution:** Share of projects across **Residential, Commercial, Industrial, Other** (chart + %); percentages for one view must **total 100%**.
+
+**Top performers:** Rank by task completion in the period — name, completed/assigned, %; same task definition as Projects/Team.
+
+**Rules:** Revenue, stock, and headcount must match source modules for the same dates. Analytics and export only for authorized roles.
+
+## 5.13) Notifications
+
+**Purpose:** *Manage approval requests from employees* — one place for approvers to see what needs action, with **counts** so workload is visible at a glance (same idea as a total **pending** number on the screen).
+
+### Pending Counts (Notification Numbers)
+
+- Show **total pending** across all types (for example: **8 pending**).
+- Each tab shows its **own count**: **Leave (n)**, **Expenses (n)**, **Blockages (n)**. Counts update when items are approved, rejected, or closed.
+
+### Tabs and What Each Covers
+
+| Tab | What it is for |
+|-----|----------------|
+| **Leave** | Employee leave requests pending approval. |
+| **Expenses** | Employee expense claims pending approval. |
+| **Blockages** | Site or project blockers reported by the team (delays, dependencies, risks). |
+
+### Leave — Reason / Type
+
+Each leave request must record a **reason or leave type** (pick list + optional note), for example:
+
+- Sick leave  
+- Casual leave  
+- Earned / privilege leave  
+- Emergency leave  
+- Other (free text with approver visibility)
+
+### Expenses — Reason / Category
+
+Each expense request must record a **category or reason**, for example:
+
+- Food  
+- Medical  
+- Travel / fuel  
+- Lodging  
+- Tools or small materials  
+- Other (with short description)
+
+### Blockages — Reason / Type
+
+Each blockage must record a **type or reason** so management can filter and fix patterns, for example:
+
+- Weather (rain, heat, unsafe conditions)  
+- Site not ready / work not completed upstream  
+- Workload / crew availability  
+- Material delay or transport  
+- Client decision or approval pending (layout change, sign-off)  
+- Technical issue (for example cable routing, structure, grid)  
+- Other (short description)
+
+*(Examples from the field: Weather delay, cable routing pending client sign-off, material transport delay.)*
+
+### Each Item in the List (Card or Row)
+
+- **Title** — short label (leave type, expense headline, or blockage type).  
+- **Project** — site name and system size where relevant (for example **Verma Bungalow 8 kW**).  
+- **Description** — what happened and current status.  
+- **Resolved by** — name of person who cleared it (when applicable).  
+- **Date** — submitted or last updated date.  
+- **View details** — full record, attachments, and approve/reject or mark resolved.  
+- **Reference** — optional **notification or ticket number** per item for support and audit (in addition to tab counts).
+
+### Rules
+
+1. Counts on tabs and header must match the number of items still **pending** in that queue.  
+2. Approvers see only queues their role is allowed to act on.  
+3. Approved leave should flow to **Attendance / HR**; approved expenses to **Finance** where payment is recorded.
+
 ## 6) Key Business Rules
 
 - Pricing rules: [To be filled]
