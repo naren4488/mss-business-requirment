@@ -774,6 +774,79 @@ Each blockage must record a **type or reason** so management can filter and fix 
 2. Approvers see only queues their role is allowed to act on.  
 3. Approved leave should flow to **Attendance / HR**; approved expenses to **Finance** where payment is recorded.
 
+## 5.14) Settings
+
+**Purpose:** Central place for **profile**, **company**, **team and roles**, **master lists** (dropdowns and categories), and other global configuration. Headings match the product navigation.
+
+### Settings — Main Sections (Sidebar)
+
+| Section | What it is for |
+|---------|----------------|
+| **Profile** | Logged-in user’s own details. |
+| **Company** | Legal and billing identity of the business. |
+| **Team** | Members, roles, and inviting or adding users. |
+| **Masters** | **Master Data Management** — dropdowns and categories used across the app. |
+| **Appearance** | Theme (light / dark / system) and accent colors. |
+| **Security** | Change password and related account security. |
+| **User Flow** | Workflow or step configuration where the product supports it. |
+
+### Profile
+
+- **Photo** (avatar), **name**, **phone**, **email**, and other standard user fields the product supports.
+- User can update their own profile where policy allows; some fields may be read-only if managed by admin.
+
+### Company
+
+- **Company name**, **GST number**, **address**, and other company master fields needed for invoices, compliance, and reports.
+- Only authorized roles may edit company data.
+
+### Team (Settings)
+
+- List every **member** with **name** and **role** (for example **Admin**, **Supervisor**, **Site Supervisor**, and other roles defined in the product).
+- **Add member** (or equivalent) to create a user and assign **role** in one flow, or add member then assign role — as implemented, but both capabilities must exist for admins.
+- Role changes should be audited (who changed, when).
+
+### Master Data Management
+
+**Surface name:** *Master Data Management* — *Configure dropdowns and categories used across the app.*
+
+**Actions (top of Masters area)**
+
+- **Expand all** — open every master group for quick review.
+- **Collapse** — close groups for a compact view.
+- **Create Master** — add a new top-level master or category where the product allows (green primary action on screen).
+
+**Master area tabs (horizontal)** — same headings as the app:
+
+1. **Projects** — project-related pick lists (example groups: **Project Types**, **Project Categories**, **Project Owner Types**, **Project Sources**). Each group shows **item count**, can **expand/collapse**, and has **Add item** for new values.
+2. **Expenses** — expense types or categories used in Finance and employee expenses.
+3. **Inventory and Tools** — material categories, tool categories, units, or similar lists used in **Inventory**.
+4. **Finance** — finance-specific dropdowns (payment modes, cost heads, etc.) as defined by the product.
+5. **Quotations** — quotation-related masters (types, terms templates, etc.).
+6. **HR and Team** — leave types, expense claim categories linked to HR, designation labels, or other HR pick lists.
+7. **GST and Tax** — tax rates, HSN/SAC groups, or GST-related options used on invoices and purchases.
+8. **System** — application-wide system codes or technical masters the product exposes here.
+
+**Rules**
+
+- Values edited under **Masters** must appear consistently wherever that dropdown is used (Projects, Finance, HR, etc.).
+- Deleting or deactivating a master value should not break old records; prefer **inactive** flag over hard delete where possible.
+- Only **admin** (or a dedicated **settings** role) may change Masters and company-level Team membership.
+
+### Appearance
+
+- **Theme:** user chooses **Light**, **Dark**, or **System** (match device or OS setting).
+- **Accent colors:** user (or company default, if the product defines hierarchy) selects **accent / primary color** for highlights, primary buttons, and key UI emphasis.
+
+### Security
+
+- **Change password:** user enters **current password**, **new password**, and **confirm new password**; enforce policy (minimum length, complexity) and show clear success or error.
+- Password change applies to the logged-in account only unless admin reset is a separate admin-only flow elsewhere.
+
+### User Flow
+
+- Last item in Settings sidebar: configure **user flow** or **process steps** where the application allows (for example default order of stages for solar projects, or which approval gates apply). Exact fields depend on product; extend this section when workflow screens are finalized.
+
 ## 6) Key Business Rules
 
 - Pricing rules: [To be filled]
