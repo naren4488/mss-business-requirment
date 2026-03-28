@@ -788,7 +788,7 @@ Each blockage must record a **type or reason** so management can filter and fix 
 | **Masters** | **Master Data Management** — dropdowns and categories used across the app. |
 | **Appearance** | Theme (light / dark / system) and accent colors. |
 | **Security** | Change password and related account security. |
-| **User Flow** | Workflow or step configuration where the product supports it. |
+| **User Flow** | Compact reference: lead→complete, money flow, approvals, expense/income modals, sidebar, work stages — see subsection below. |
 
 ### Profile
 
@@ -845,7 +845,21 @@ Each blockage must record a **type or reason** so management can filter and fix 
 
 ### User Flow
 
-- Last item in Settings sidebar: configure **user flow** or **process steps** where the application allows (for example default order of stages for solar projects, or which approval gates apply). Exact fields depend on product; extend this section when workflow screens are finalized.
+**** Configure journeys, money trace, approvals, modals, menu, and stage names. **Configurable (one line):** step order | cash/loan templates | approvals | landing by role | completion gates | notifications | numbering | offline/sync.
+
+**Lead → completion (short):** Lead → qualify → survey → quotation → customer approval → *(loan path if needed)* → plan → install *(structure → electrical → meter → checks → photos → photo verify)* → reports *(DCR, WCR)* → subsidy/compliance → handover → **complete**.
+
+**Financial amount flow (short):** Quotation → agreed order → **bill to book** → **invoice** → customer receipts *(+ Loan File Book installments if loan)* → vendor payables → company loans / partner payouts → **Add Expense** / **Add Income** → **Transactions** / Analytics rules.
+
+**Work status + approval (short):** Stages follow **Work status stages** below (or Masters). Sensitive moves need approver; **Notifications** handles leave / expense / blockage; log who changed status and when.
+
+**Add Expense modal:** Open **Add Expense** → amount, date, category *(Masters)*, optional project/vendor/attachment → submit → *(if needed)* **Notifications → Expenses** → approve → **Transactions**.
+
+**Add Income modal:** Open **Add Income** → amount, date, category, optional project/customer → submit → **Transactions** *(revenue rules)*; income role only.
+
+**Sidebar (short):** Dashboard | Sales | Projects | Inventory *(Materials, Tools, Presets)* | Team | Finance *(sidebar + Finance & Accounts tabs in 5.11)* | Financial Audit | Analytics | Notifications | Settings *(Profile … User Flow)*.
+
+**Work status stages (short):** New/Lead → Qualified → Survey done → Quoted → Approved → Material issued → Structure → Electrical → Verification → Reports pending → Subsidy/bank → **Completed** | **On hold/Blocked**.
 
 ## 6) Key Business Rules
 
