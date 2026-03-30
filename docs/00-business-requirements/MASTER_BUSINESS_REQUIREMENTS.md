@@ -5,19 +5,60 @@ It should not include software engineering implementation details.
 
 ## 1) Business Overview
 
-- Business name: Mahi Solar Solution
-- Domain: Solar products and services
+- Business name: Mahisolar Solution
+- Industry: Rooftop solar installation
+- Domain: Solar products and services (equipment, design, installation, and after-sales)
+- System type: End-to-end solar business management system (ERP-style — one place for operations, people, stock, money, and reporting)
 - Mission: [To be filled]
 - Vision: [To be filled]
 
-## 2) Business Goals
+> Note: The name may also appear as “Mahi Solar Solution” in existing materials; both refer to the same business.
+
+## 2) Objective
+
+Build a **centralized system** so the business can run day-to-day operations with consistent data and clear handoffs between teams.
+
+The system must support, at minimum:
+
+- Leads (inquiries)
+- Customers
+- **Agents** (external lead sources, commissions, and performance)
+- Quotations
+- Projects
+- Inventory (materials, tools, presets, and related movement rules)
+- Employees (team, attendance, payroll, and site deployment where used)
+- Finance and accounting (income, expense, vendors, company loans, partners, agent commissions, and alignment with billing)
+- Reports and analytics (performance and financial visibility for leadership)
+
+## 3) Core Business Workflow (Summary)
+
+At a high level, work moves **from first contact to a closed, billable, compliant installation**, with stock and money recorded along the way.
+
+Typical sequence:
+
+1. Capture and qualify **leads**, convert to **customers** where appropriate.
+2. Run **survey** and produce **quotations** (solar or other); obtain customer **approval** and agreement.
+3. Create and execute **projects** (planning, material issue, structure and electrical work, verification, photos and evidence, reports, subsidy or loan file steps where applicable).
+4. Manage **inventory and tools** in line with site consumption, returns, transport, and audit expectations.
+5. Record **commercial documents** (bill to book, invoice, receipts, loan installments where applicable) and keep **finance** aligned.
+6. Use **notifications** for approvals (leave, expenses, blockages) and **settings / master data** so dropdowns and company profile stay consistent.
+7. Review **reports and analytics** for pipeline, delivery, stock value, and financial health.
+
+### Workflow exceptions (direct deals)
+
+- The **quotation** step may be **skipped** when the business closes a **direct deal** (agreed scope and price without a formal quote document in the system).
+- A **project** may be **created directly** without a linked quotation when management approves a direct deal. Any mandatory customer or compliance data must still be captured on the project (or linked records) per company policy.
+
+Detailed steps, documents, and module-specific rules are expanded in **§7 End-to-End Business Process** and **§7.1–§7.14** below.
+
+## 4) Business Goals
 
 - Short-term goals:
   - [To be filled]
 - Long-term goals:
   - [To be filled]
 
-## 3) Target Customers
+## 5) Target Customers
 
 - Customer segments:
   - Residential
@@ -28,7 +69,7 @@ It should not include software engineering implementation details.
 - Customer expectations:
   - [To be filled]
 
-## 4) Core Offerings
+## 6) Core Offerings
 
 - Products:
   - Solar panels
@@ -45,7 +86,7 @@ It should not include software engineering implementation details.
 - Value proposition:
   - Reliable energy solutions with transparent pricing and service support
 
-## 5) End-to-End Business Process
+## 7) End-to-End Business Process
 
 1. Lead generation
 2. Inquiry and qualification
@@ -58,11 +99,15 @@ It should not include software engineering implementation details.
 9. Handover and training
 10. After-sales service and maintenance
 
+> **Process flexibility:** In practice, **quotation may be omitted** for direct deals, and **projects may start without a quotation** when approved. The numbered list above remains the default “happy path” for governed sales.
+
 > Note: We will expand each process step with detailed business rules as requirements are shared.
 
-## 5.1) Quotation Requirements
+## 7.1) Quotation Requirements
 
 The business needs a standard quotation format to ensure consistent pricing and approvals.
+
+When a **direct deal** is approved, the business may **skip creating a quotation** in the system; the **project** (and any required commercial records such as bill book or invoice) still follows policy. See **§3** workflow exceptions.
 
 ### Quotation Types
 
@@ -131,7 +176,7 @@ The business needs a standard quotation format to ensure consistent pricing and 
 - Passbook (bank passbook copy)
 - Electricity Bill (latest 6 months copy)
 
-## 5.2) Login, Subsidy, and Loan-to-Bank File Process
+## 7.2) Login, Subsidy, and Loan-to-Bank File Process
 
 This section defines the business sequence for subsidy and loan-related processing.
 
@@ -179,7 +224,7 @@ If the project is in cash mode:
 - Passbook (bank passbook copy)
 - Electricity Bill (latest 6 months copy)
 
-## 5.3) Structure Installation and Material List Form Process
+## 7.3) Structure Installation and Material List Form Process
 
 This section defines the process for structure work, panel installation, and material tracking.
 
@@ -271,13 +316,13 @@ The following inventory/material management capabilities are already available a
 - Maintain per-site material consumption history for audit and subsidy/bank file support.
 - Keep material unit consistency (pcs, foot, meter) across issue, return, and installation records.
 
-## 5.4) Module-Wise Headings (Based on Current App)
+## 7.4) Module-Wise Headings (Based on Current App)
 
 Use the following heading structure for all business requirements and feature documents.
 
 
 
-## 5.5) Material Verification, Transportation, Return Policy, and Tools Condition
+## 7.5) Material Verification, Transportation, Return Policy, and Tools Condition
 
 This section defines operational terms for material movement and tool quality checks.
 
@@ -314,7 +359,7 @@ This section defines operational terms for material movement and tool quality ch
 2. All entries should maintain date-time and user audit trail.
 3. Site-wise history must be available for material and tools for audit and dispute handling.
 
-## 5.6) Tools Module Requirements (As per current screen)
+## 7.6) Tools Module Requirements (As per current screen)
 
 This section captures tools tracking requirements based on the current Tools page.
 
@@ -386,7 +431,7 @@ Each tool record should include:
 4. Damaged tools must be tagged and moved to maintenance/repair workflow.
 5. Tools marked "not working" cannot be re-issued until verified after repair.
 
-## 5.7) Bill to Book and Invoice
+## 7.7) Bill to Book and Invoice
 
 Commercial billing must follow a clear sequence from order to accounting record and tax document.
 
@@ -414,7 +459,7 @@ For **loan** projects, track customer payments in order:
 2. **Second installment** — same fields as applicable under bank or company agreement; record when paid and reconcile against the loan schedule.
 3. No installment entry should be marked complete without transaction reference or receipt where required by finance policy.
 
-## 5.8) Presets (Quotations, Invoice, and Inventory Matching)
+## 7.8) Presets (Quotations, Invoice, and Inventory Matching)
 
 This section reflects the **Presets** area used to configure standard system bundles (material lists) for **quotations** and **invoice and inventory matching** (as per current screen).
 
@@ -457,7 +502,7 @@ Additional items (for example wiring, protection, meter-related materials) may b
 - Edit preset
 - Delete preset
 
-## 5.9) Files, Data, and Gallery (Online and Offline)
+## 7.9) Files, Data, and Gallery (Online and Offline)
 
 The system must support storing and viewing project **files**, structured **data**, and a **gallery** of images, with both **online** and **offline** working patterns where field teams may have poor connectivity.
 
@@ -484,7 +529,7 @@ The system must support storing and viewing project **files**, structured **data
 4. **Offline:** users should be able to capture photos on site; images should attach to the project and upload when online, with visible pending state until upload completes.
 5. Thumbnail or preview may be available offline for recently opened projects if supported by the app, without exposing sensitive data to unauthorized users.
 
-## 5.10) Team, Employees, and HR (Payroll and Attendance)
+## 7.10) Team, Employees, and HR (Payroll and Attendance)
 
 The **Team** area includes employee management and HR workflows. For **employees**, the business needs two linked areas: **Payroll** (money and month-end totals) and **Attendance** (day-to-day presence, which drives Present / Absent / Holiday in payroll).
 
@@ -567,7 +612,7 @@ Roles may include: Site Supervisor, Senior Installer, Electrician, Installer, He
 3. Payment actions should leave an audit trail (who paid, when, and amount).
 4. Access to payroll and employee financial data should be restricted to authorized roles.
 
-## 5.11) Finance and Accounts
+## 7.11) Finance and Accounts
 
 **Scope:** Company-level money: income, expense, payables to suppliers, lender loans and repayments, and partner profit and capital. Customer **quotations**, **bill to book**, **invoices**, and **customer loan installments** (Loan File Book) stay aligned with this module where amounts are recorded or exported.
 
@@ -690,7 +735,7 @@ Roles may include: Site Supervisor, Senior Installer, Electrician, Installer, He
 3. **Access:** Finance tabs, export, and payment actions are role-restricted.
 4. **Naming:** Customer-facing loan installments remain documented in **Loan File Book** and subsidy/bank sections; **Loans and Repayments** here = **company** borrowings unless you later define an explicit link.
 
-## 5.12) Analytics and Reports
+## 7.12) Analytics and Reports
 
 **Purpose:** *Business insights and performance metrics* for the solar business — one screen with filters, KPIs, segment mix, top performers, and export.
 
@@ -706,7 +751,7 @@ Roles may include: Site Supervisor, Senior Installer, Electrician, Installer, He
 
 **Rules:** Revenue, stock, and headcount must match source modules for the same dates. Analytics and export only for authorized roles.
 
-## 5.13) Notifications
+## 7.13) Notifications
 
 **Purpose:** *Manage approval requests from employees* — one place for approvers to see what needs action, with **counts** so workload is visible at a glance (same idea as a total **pending** number on the screen).
 
@@ -774,7 +819,7 @@ Each blockage must record a **type or reason** so management can filter and fix 
 2. Approvers see only queues their role is allowed to act on.  
 3. Approved leave should flow to **Attendance / HR**; approved expenses to **Finance** where payment is recorded.
 
-## 5.14) Settings
+## 7.14) Settings
 
 **Purpose:** Central place for **profile**, **company**, **team and roles**, **master lists** (dropdowns and categories), and other global configuration. Headings match the product navigation.
 
@@ -845,7 +890,7 @@ Each blockage must record a **type or reason** so management can filter and fix 
 
 ### User Flow
 
-**** Configure journeys, money trace, approvals, modals, menu, and stage names. **Configurable (one line):** step order | cash/loan templates | approvals | landing by role | completion gates | notifications | numbering | offline/sync.
+**User Flow configuration:** Configure journeys, money trace, approvals, modals, menu, and stage names. **Configurable (one line):** step order | cash/loan templates | approvals | landing by role | completion gates | notifications | numbering | offline/sync.
 
 **Lead → completion (short):** Lead → qualify → survey → quotation → customer approval → *(loan path if needed)* → plan → install *(structure → electrical → meter → checks → photos → photo verify)* → reports *(DCR, WCR)* → subsidy/compliance → handover → **complete**.
 
@@ -857,11 +902,11 @@ Each blockage must record a **type or reason** so management can filter and fix 
 
 **Add Income modal:** Open **Add Income** → amount, date, category, optional project/customer → submit → **Transactions** *(revenue rules)*; income role only.
 
-**Sidebar (short):** Dashboard | Sales | Projects | Inventory *(Materials, Tools, Presets)* | Team | Finance *(sidebar + Finance & Accounts tabs in 5.11)* | Financial Audit | Analytics | Notifications | Settings *(Profile … User Flow)*.
+**Sidebar (short):** Dashboard | Sales | Projects | Inventory *(Materials, Tools, Presets)* | Team | Finance *(sidebar + Finance & Accounts tabs in 7.11)* | Financial Audit | Analytics | Notifications | Settings *(Profile … User Flow)*.
 
 **Work status stages (short):** New/Lead → Qualified → Survey done → Quoted → Approved → Material issued → Structure → Electrical → Verification → Reports pending → Subsidy/bank → **Completed** | **On hold/Blocked**.
 
-## 6) Key Business Rules
+## 8) Key Business Rules
 
 - Pricing rules: [To be filled]
 - Discount rules: [To be filled]
@@ -869,7 +914,7 @@ Each blockage must record a **type or reason** so management can filter and fix 
 - SLA and turnaround expectations: [To be filled]
 - Warranty and service commitments: [To be filled]
 
-## 7) Roles and Responsibilities (Business View)
+## 9) Roles and Responsibilities (Business View)
 
 - Sales
 - Survey Team
@@ -881,47 +926,204 @@ Each blockage must record a **type or reason** so management can filter and fix 
 
 Each role's responsibilities will be added as we capture detailed requirements.
 
-## 11) User Types and Role Structure
+## 10) User Types, Access, and Role Structure
 
-The business will have two main user types:
+### Authentication and first access
 
-- Admin
-- Employee
+- The **first administrator** for the organization is created during **system setup / onboarding** (outside the normal day-to-day “add user” flow used by admins).
+- After that, **admins** sign in and manage the system (users, masters, data, approvals) according to their permissions.
 
-Each user type will have role-based classification.
+### User types (system)
 
-### Admin Type - Roles
+The product distinguishes two primary **user types**:
 
+1. **Admin users** — internal leadership and operations staff who configure and oversee the system.
+2. **Employee users** — field and operational staff who use the **employee-facing** experience (tasks, progress, limited data entry).
+
+### Admin users — roles (initial)
+
+- Super Admin
 - Admin
 - CEO
-- Additional admin roles can be added as needed
+- Manager *(future scope)*
 
-### Employee Type - Roles
+### Admin users — capabilities (business view)
 
-- Site Supervisor
+- Access is **full or broad**, constrained by **role permissions** (not everyone must see payroll or finance if policy says otherwise).
+- Admins typically **manage or oversee**:
+  - Employees
+  - Agents
+  - Customers
+  - Projects
+  - Finance and reporting
+
+### Employee users — roles / job types (initial)
+
 - Welder
+- Site Supervisor
 - Civil Worker
-- Additional employee roles can be added as needed
+- Technician *(future scope)*
 
-### Core Requirement
+### Employee users — capabilities (business view)
 
-- Every user must belong to exactly one user type.
-- Every user must be assigned a role under that user type.
-- User creation and management should always be done based on user type and user role.
+- Use the **employee portal** (or equivalent app experience).
+- **View assigned tasks** and update **progress**.
+- **Mark tasks complete** when work is done (subject to approval rules if the business adds them later).
 
-## 8) Reporting and KPIs
+### Core rules
+
+- Every user belongs to **exactly one** user type (Admin or Employee).
+- Every user has **at least one** role appropriate to that type.
+- **User creation and changes** are always recorded with user type and role so access and audit stay clear.
+
+---
+
+## 11) Agent Management
+
+### Description
+
+**Agents** are **external** individuals or parties who **bring leads** to the business and may earn **commission** on converted work.
+
+### Features (business)
+
+- **Add and maintain** agent records (contact, agreement terms, status).
+- **Track** leads or inquiries attributed to each agent.
+- **Track commission** per project (or per deal), according to agreed rules.
+- **Relationship chain** the business must be able to follow:
+  - **Agent → Inquiry → Project → Payment** (and commission settlement where applicable).
+
+---
+
+## 12) Core Product Modules (Summary)
+
+High-level module list aligned with the product. Detailed rules for quotations, finance, inventory, HR, etc. appear in **§7.1–§7.14** where they overlap.
+
+### 12.1) Inquiry management
+
+- Create and manage **inquiries (leads)**.
+- **Link** to:
+  - **Customer** (existing or new)
+  - **Agent** *(optional)*
+- **Status** tracking (initial set):
+  - New
+  - Contacted
+  - Converted
+  - Lost
+
+### 12.2) Customer management
+
+- Store **customer master** details.
+- **Reuse** the same customer across inquiries, quotations, projects, billing, and documents.
+
+### 12.3) Quotation management
+
+- Create quotations **from an inquiry** or **directly** (e.g. walk-in or repeat customer).
+- Include **system specifications** and **pricing breakdown** appropriate to solar vs other offerings (see **§7.1**).
+- **Status** tracking (initial set):
+  - Draft
+  - Sent
+  - Approved
+  - Rejected
+
+### 12.4) Project management (core)
+
+**Triggers**
+
+- Created after **quotation approval**, **or**
+- Created for a **direct deal** **without** a quotation (see **§3** workflow exceptions).
+
+**Sub-areas the business expects on a project** (names may match navigation in the product):
+
+| Sub-area | Purpose |
+|----------|---------|
+| DISCOM work | Net meter application, approvals, and related utility coordination |
+| Installation work | Task assignment, execution, progress |
+| Bank / loan processing | Loan status, documentation, bank file sequence where applicable |
+| Subsidy / portal work | Government or scheme portals, subsidy tracking |
+| Inventory allocation | Materials (and tools where used) tied to the project |
+| Expense tracking | Labor, transport, misc. project costs |
+| Payment tracking | Advance, partial, final settlement; cash vs bank vs loan |
+
+### 12.5) Invoice management
+
+- Generate **invoices from the project** (and link to quotation/order where they exist).
+- Support **more than one invoice per project** when the business bills in phases.
+- Design should remain **ready for GST** (tax lines, legal fields) per company rollout.
+
+### 12.6) Payment management
+
+- Track customer payments as **paid**, **pending**, or **partial** (and any business-specific states later).
+- **Modes** include at least: **Cash**, **Bank**, **Loan** (aligned with Loan File Book / finance modules).
+
+---
+
+## 13) Supporting Modules (Summary)
+
+### 13.1) Inventory management
+
+- Stock for **panels, inverters, structure materials**, and other items the business tracks.
+- **Stock in / out** and **allocation to projects** (aligned with **§7.3**, **§7.5–§7.8**).
+
+### 13.2) Vendor / supplier management
+
+- Vendor master and **purchase** / **payment** visibility (aligned with **§7.11** Vendors).
+
+### 13.3) Finance and accounting
+
+- **Chart of accounts**, **ledger**-style transaction records, **expenses**, **purchases**, and **agent commission** tracking, consistent with **§7.11** and billing flows.
+
+### 13.4) Employee management
+
+- Employee records, **attendance**, **salary / payroll**, and **employee ledger** where the business tracks advances and settlements (aligned with **§7.10**).
+
+### 13.5) Task management
+
+- **Admin** (or authorized role) **assigns tasks**.
+- **Employees** view tasks, update progress, and mark **complete** (with optional approval later).
+
+### 13.6) Reports and analytics
+
+See **§15** for the standard report set and KPI alignment.
+
+---
+
+## 14) Key System Relationships (Business View)
+
+These links define how records must connect for traceability from lead to money.
+
+- **Agent** (optional) → **Inquiry** → **Customer** (on conversion) → **Quotation** (optional) → **Project** → **Invoice(s)** → **Payment(s)**.
+- **Project** → **Inventory allocation** (materials/tools issued and consumed).
+- **Project** → **Expenses** (labor, transport, misc.) → **Finance / ledger**.
+- **Project** → **DISCOM / subsidy / loan** artifacts (documents and statuses) for compliance.
+- **Employee** → **Tasks** → **Project** (where assigned).
+- **Agent** → **Commission** → **Project** / **Payment** (per agreed rules).
+
+---
+
+## 15) Reporting and KPIs
+
+### Standard reports (initial expectation)
+
+- Project profitability
+- Expense reports
+- Inventory usage
+- Payment summaries
+- Agent performance
+- Employee cost analysis
+
+### Additional KPIs (pipeline and quality)
 
 - Lead conversion rate
-- Proposal acceptance rate
+- Proposal / quotation acceptance rate
 - Installation completion time
 - Customer satisfaction
 - Service resolution time
 - Revenue and margin indicators
 
-## 9) Risks and Constraints (Business View)
+## 16) Risks and Constraints (Business View)
 
 - [To be filled]
 
-## 10) Open Business Questions
+## 17) Open Business Questions
 
 - [To be filled]

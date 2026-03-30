@@ -33,12 +33,15 @@ Establish a clear user hierarchy so all system users are organized by type and r
 ## Initial Role Setup
 
 - Admin type roles:
+  - Super Admin
   - Admin
   - CEO
+  - Manager *(future scope)*
 - Employee type roles:
   - Site Supervisor
   - Welder
   - Civil Worker
+  - Technician *(future scope)*
 
 ## Non-Functional Expectations
 
@@ -49,7 +52,7 @@ Establish a clear user hierarchy so all system users are organized by type and r
 ## Acceptance Criteria
 
 - [ ] User type list includes Admin and Employee.
-- [ ] Admin roles include Admin and CEO.
+- [ ] Admin roles include Super Admin, Admin, and CEO (Manager when in scope).
 - [ ] Employee roles include Site Supervisor, Welder, and Civil Worker.
 - [ ] User creation requires both user type and role.
 - [ ] Role dropdown updates based on chosen user type.
