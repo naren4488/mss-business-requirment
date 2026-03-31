@@ -1,26 +1,27 @@
 # MSS Business Requirement Docs
 
-This repository contains end-to-end planning and documentation for the solar business.
+This repository contains planning and business requirements for the solar business (admin product and related scope).
 
-## Documentation Principles
+## Documentation principles
 
-- Business-first clarity: capture what the business needs and why.
-- Separation of concerns: keep pure business requirements separate from engineering details.
-- Traceability: every feature should connect business goals to UI, backend, data, and API design.
-- Iterative updates: docs are living artifacts and should evolve with each requirement discussion.
+- Business-first: capture what the business needs and why.
+- Keep the working BRD lean; longer feature notes live beside it with clear links.
+- Iterate: documents grow as requirements are discussed.
 
-## Folder Structure
+## Folder structure
 
-- `docs/00-business-requirements/` - master business requirements (non-technical)
-- `docs/01-product-breakdown/` - feature-wise product behavior and acceptance criteria
-- `docs/02-engineering/` - implementation-oriented docs (UI, backend, API, data)
-- `docs/03-examples/` - examples, sample flows, sample payloads, and mock scenarios
-- `docs/04-decisions/` - architecture and product decisions, assumptions, and trade-offs
-- `docs/99-templates/` - reusable templates for adding new docs quickly
+All documentation lives under **`docs/00-business-requirements/`**:
 
-## Working Method
+| Path | Purpose |
+|------|---------|
+| `MASTER_BUSINESS_REQUIREMENTS.md` | Large consolidated business requirements reference (legacy / full capture). |
+| `MASTER_BUSINESS_REQUIREMENTS_BUILD.md` | Step-by-step working BRD: platform context, end-to-end flow, feature index with links. |
+| `detail/` | Per-feature detailed BRD files (e.g. employees, agents, inquiries, quotations, presets) plus TBD trackers. |
 
-1. We add or update business requirements in the master business document.
-2. We break each requirement into feature docs with clear scope.
-3. We maintain engineering docs separately for UI/backend/API/data details.
-4. We add examples for complex flows and edge cases.
+Add new feature specs as `detail/FEATURE_<NAME>.md` and link them from `MASTER_BUSINESS_REQUIREMENTS_BUILD.md`.
+
+## Working method
+
+1. Extend **`MASTER_BUSINESS_REQUIREMENTS_BUILD.md`** with short summaries and links.
+2. Put depth, field lists, rules, and **TBD** checklists in **`detail/`** feature files.
+3. Update **`MASTER_BUSINESS_REQUIREMENTS.md`** when you want a single long-form snapshot of the same content.

@@ -972,9 +972,14 @@ The product distinguishes two primary **user types**:
 
 ### Core rules
 
-- Every user belongs to **exactly one** user type (Admin or Employee).
+- Every user belongs to **exactly one** user type (Admin or Employee) — **not both** on the same account.
 - Every user has **at least one** role appropriate to that type.
 - **User creation and changes** are always recorded with user type and role so access and audit stay clear.
+
+### Which app each type uses
+
+- **Employee** type → **employee app / panel only** (no access to the admin app).
+- **Admin** type → **admin app**; the product also allows them to open the **employee app / panel** when needed, so **admins may use both panels** with one login (subject to role-based rules if you limit employee-panel access later).
 
 ---
 
